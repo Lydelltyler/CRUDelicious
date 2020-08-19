@@ -1,0 +1,49 @@
+
+@model Dish
+<div class="text-center">
+    <h1 class="display-4">@Model.Name</h1>
+    
+    <hr>
+    <form class="dish-form" action="/update" method="post">
+        <a href="/" class="btn btn-outline-primary btn-block">Home</a>
+        <input type="hidden" asp-for="DishId" value="@Model.DishId">
+        <div class="form-area">
+            <div class="form-item">
+                <div class="form-group">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                    <label asp-for="Name">Chef's Name</label>
+                    <input class="form-control" placeholder="@Model.Name" name="Name" type="text">
+                </div>
+                <div class="form-group">
+                    <span class="text-danger" asp-validation-for="DishName"></span>
+                    <label asp-for="DishName">Name of Dish</label>
+                    <input class="form-control" placeholder="@Model.DishName" name="DishName" type="text">
+                </div>
+                <div class="form-group">
+                    <span class="text-danger" asp-validation-for="Calories"></span>
+                    <label asp-for="Calories"> # of Calories</label>
+                    <input class="form-control" placeholder="@Model.Calories" name="Calories" type="number">
+                </div>
+            </div>
+            <div class="form-item">
+                <label asp-for="Taste"></label>
+                <select class="form-control" name="Taste" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-item">
+                <span class="text-danger" asp-validation-for="Description"></span>
+                <label asp-for="Description"></label>
+                <textarea class="form-control" placeholder="@Model.Description" name="Description" id="" cols="20" rows="5"></textarea>
+            </div>
+        </div>
+        <button class="btn btn-outline-light btn-block" type="sumbit">Edit Dish</button>
+    </form>
+
+    
+    
+</div>

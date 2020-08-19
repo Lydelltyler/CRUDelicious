@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Dish>
+<div class="text-center">
+    <h1 class="display-4">Welcome to CRUDelicious</h1>
+    <div class="row">
+        <div class="col">
+            <h5>Check out some recent dishes</h5>
+            <hr>
+            @{
+                
+                    foreach(var dish in Model)
+                    {
+                        <p><a href="/detail/@dish.DishId"> @dish.DishName </a>by @dish.Name</p> 
+                    }
+            }
+            
+        </div>
+        <a class="col-sm btn btn-link" href="/newdish">Add a Dish</a>
+    </div>
+    
+
+    
+
+
+    
+</div>
